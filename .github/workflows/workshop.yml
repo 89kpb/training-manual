@@ -12,12 +12,20 @@ name: "GitHub Actions Workshop"
 # ── Triggers ────────────────────────────────────────────────
 on:
   workflow_dispatch:
+
+permissions: read
     
 # ── Jobs ────────────────────────────────────────────────────
 jobs:
-  hello:
+  explore:
     runs-on: ubuntu-latest
     steps:
-      # ── Step 1: Checkout the repo (marketplace action) ──
-      - name: Say hello
-        run: echo "Hello from Github Actions"
+      # users: calls a market place action ──
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: Explore teh repository
+        run: 
+          echo "Runner directory: $PWD"
+          echo "Repository files: "
+          find: . -maxdepth 2 -type f | sort
