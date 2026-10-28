@@ -13,7 +13,8 @@ name: "GitHub Actions Workshop"
 on:
   workflow_dispatch:
 
-permissions: read
+permissions:
+  contents: read
     
 # ── Jobs ────────────────────────────────────────────────────
 jobs:
