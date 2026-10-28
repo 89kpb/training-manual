@@ -1,0 +1,23 @@
+# Demo 1 — Workflows (Triggers, Jobs, Steps, Marketplace Actions)
+#
+# Key concepts:
+#   - name / on / jobs / steps
+#   - Triggers: push + workflow_dispatch (manual)
+#   - uses (marketplace action) vs run (shell command)
+#   - $GITHUB_STEP_SUMMARY for rich log output
+#   - Matrix strategy (the "small upgrade")
+
+name: "GitHub Actions Workshop"
+
+# ── Triggers ────────────────────────────────────────────────
+on:
+  workflow_dispatch:
+    
+# ── Jobs ────────────────────────────────────────────────────
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      # ── Step 1: Checkout the repo (marketplace action) ──
+      - name: Say hello
+        run: echo "Hello from Github Actions"
