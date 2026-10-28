@@ -29,4 +29,4 @@ jobs:
         run: 
           echo "Runner directory: $PWD"
           echo "Repository files: "
-          find: . -maxdepth 2 -type f | sort
+          find . -maxdepth 2 -type f | sort
